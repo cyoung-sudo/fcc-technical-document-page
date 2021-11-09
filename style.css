@@ -1,0 +1,94 @@
+/*===== Base =====*/
+*, *:before, *:after {
+  box-sizing: border-box ; 
+  padding: 0 ;
+  margin: 0 ;  
+}
+
+body {
+  font-family: Arial;
+}
+
+/*===== Layout =====*/
+#grid-wrapper {
+  display: grid;
+  grid-template-areas: "nav main";
+  grid-template-rows: auto;
+  grid-template-columns: 250px auto;
+}
+
+#navbar {
+  grid-area: nav;
+  position: fixed;
+  width: 250px;
+  height: 100vh;
+  padding: 1rem;
+  font-size: 1.25rem;
+  text-align: center;
+  border-right: 1px solid gray;
+}
+
+#navbar header {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+#main-doc {
+  grid-area: main;
+  padding: 3rem;
+}
+
+@media (max-width: 600px) {
+  #grid-wrapper {
+    grid-template-areas: "nav"
+                         "main";
+    grid-template-rows: 200px auto;
+    grid-template-columns: auto;
+  }
+
+  #navbar {
+    position: relative;
+    overflow: scroll;
+    height: 200px;
+    width: 100vw;
+  }
+}
+
+/*===== Classes & Styles =====*/
+.nav-link {
+  display: block;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-top: 1px solid gray;
+  text-decoration: none;
+  color: black;
+  transition: 500ms ease;
+}
+
+.nav-link:hover {
+  background-color: gainsboro;
+}
+
+.main-section {
+  margin-bottom: 4rem;
+  padding: 2rem;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+
+.main-section header, p, code, ul li {
+  margin-bottom: 2rem;
+}
+
+.content-section {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+code {
+  display: block;
+}
+
+p {
+  text-indent: 10%;
+}
